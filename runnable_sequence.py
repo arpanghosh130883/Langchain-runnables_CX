@@ -4,6 +4,15 @@ from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 from langchain.schema.runnable import RunnableSequence
 
+####    For latest version of Langchain use the below import ### 
+'''
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableSequence
+from dotenv import load_dotenv
+''''
+
 load_dotenv()
 
 prompt1 = PromptTemplate(
@@ -21,5 +30,6 @@ prompt2 = PromptTemplate(
 )
 
 chain = RunnableSequence(prompt1, model, parser, prompt2, model, parser)
+
 
 print(chain.invoke({'topic':'AI'}))
