@@ -1,18 +1,8 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from dotenv import load_dotenv
-from langchain.schema.runnable import RunnableSequence, RunnableParallel
-
-
-####    For latest version of Langchain use the below import ### 
-'''
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableSequence, RunnableParallel
 from dotenv import load_dotenv
-''''
 
 load_dotenv()
 
@@ -39,5 +29,6 @@ result = parallel_chain.invoke({'topic':'AI'})
 
 print(result['tweet'])
 print(result['linkedin'])
+
 
 
